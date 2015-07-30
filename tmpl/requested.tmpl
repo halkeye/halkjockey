@@ -1,0 +1,13 @@
+<TMPL_INCLUDE NAME="header.tmpl">
+  <h1>Requsted</h1>
+  <br/>
+  
+  <TMPL_IF NAME="song_id">
+    Requested: <TMPL_VAR NAME="song_artist"><font color="#00ff00"><b>:</b></font><TMPL_VAR NAME="song_title"><br/>
+  <TMPL_ELSE>
+    No such song exists.
+  </TMPL_IF>
+  <br/>
+  <a href="/">Back</a>
+
+<TMPL_INCLUDE NAME="footer.tmpl">

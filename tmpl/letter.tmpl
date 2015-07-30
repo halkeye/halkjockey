@@ -1,0 +1,15 @@
+<TMPL_INCLUDE NAME="header.tmpl">
+  <h1><TMPL_VAR NAME="LETTER"> Songs</h1>
+  <br/>
+  
+  <TMPL_UNLESS NAME="songs">
+  No Songs available<br/>
+  <TMPL_ELSE>
+  <TMPL_LOOP NAME="songs">
+    <a href="/request/<TMPL_VAR NAME="id">"><TMPL_VAR NAME="id"></a> <TMPL_VAR NAME="artist"><font color="#00ff00"><b>:</b></font><TMPL_VAR NAME="title"><br/>
+  </TMPL_LOOP>
+  </TMPL_UNLESS>
+  <br/>
+  <a href="/">Back</a>
+
+<TMPL_INCLUDE NAME="footer.tmpl">

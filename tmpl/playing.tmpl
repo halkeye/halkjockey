@@ -1,0 +1,77 @@
+<TMPL_INCLUDE NAME="header.tmpl">
+
+<h1 align="center">Playlist</h1>
+<!--  <table border="0" bgcolor="#000000" cellpadding="5">
+    <tr>
+      <td bgcolor="#0000F5"><b>Name:</b></td>
+    </tr>
+<TMPL_UNLESS NAME="playing">
+    <tr>
+      <td bgcolor="#000080">Nothing is Playing</td>
+    </tr>
+<TMPL_ELSE>
+    <tr><td style='background-color: #000080'>
+    <TMPL_VAR NAME="playing_artist"><font color="#00ff00"><b> - </b></font>
+    <TMPL_VAR NAME="playing_title"> <font color="#FF0000">(Playing)</font>
+    </td></tr>
+  <TMPL_LOOP NAME="playlist">
+    <tr><td style='background-color: #000080'><TMPL_VAR NAME="artist"><font color="#00ff00"><b> - </b></font><TMPL_VAR NAME="title"> <TMPL_IF NAME="playing"><font color="#FF0000">(Playing)</font></TMPL_IF><TMPL_IF NAME="next"><font color="#FF0000">(Up Next)</font></TMPL_IF></td></tr>
+  </TMPL_LOOP>
+</table>
+</center>
+</TMPL_UNLESS>
+-->
+
+<table align="center" width="75%">
+  <tr>
+   <td>
+    <table>
+      <tr><td bgcolor="#000080"><b>Name:</b></td><td bgcolor="#000080"><TMPL_VAR NAME="playing_album"><font color="#00FF00"><b> : </b></font><TMPL_VAR NAME="playing_artist"><font color="#00ff00"><b> - </b></font><TMPL_VAR NAME="playing_title"></td></tr>
+      <tr><td bgcolor="#000080"><b>Bitrate:</b></td><td bgcolor="#000080" width="100%"><TMPL_VAR NAME="playing_bitrate"> kbps.</td></tr>
+      <tr><td bgcolor="#000080"><b>Song Length:</b></td><td bgcolor="#000080"><TMPL_VAR NAME="playing_length"></td></tr>
+    </table>
+   </td>
+  </tr>
+  <tr>
+    <td><b>Percent done:</b><TMPL_VAR NAME="playing_progress"></td>
+  </tr>
+  <tr><td valign="top" width="50%" align="center"><b>Coming up Next</b></td></tr>
+  <tr><td>
+    <table border="0" width="100%" bgcolor="#000000" cellpadding="5">
+      <TMPL_LOOP NAME="playlist">
+      <tr>
+        <td bgcolor="#000080"><center><b><TMPL_VAR NAME="count"></b></center></td>
+        <td bgcolor="#000080">
+        <TMPL_VAR NAME="artist"><font color="#00ff00"><b> - </b></font><TMPL_VAR NAME="title">
+        <TMPL_IF NAME="playing"><font color="#FF0000">(Playing)</font></TMPL_IF>
+        <TMPL_IF NAME="next"><font color="#FF0000">(Up Next)</font></TMPL_IF>
+        </td>
+      </tr>
+      </TMPL_LOOP>
+    </table>
+  </td></tr>    
+  <tr><td>&nbsp;</td></tr>
+  <tr><td><font color="#00FF00">This list represents the top 10 songs that were requested in the last 1,000 requests.</font></td></tr>
+  <tr>
+    <td>
+      <table border="0" bgcolor="#000000" cellpadding="5">
+        <tr>
+          <td bgcolor="#000080"><b>Rank:</b></td>
+          <td bgcolor="#000080"><b>Name:</b></td>
+          <td bgcolor="#000080"><b>Requested</b></td>
+        </tr>
+        <TMPL_LOOP NAME="top10">
+        <tr>
+          <td bgcolor="#000080" align="center"><b><TMPL_VAR NAME="rank"></b></td>
+          <td bgcolor="#000080" width="100%"><TMPL_VAR NAME="artist"><font color="#00ff00"><b> - </b></font><TMPL_VAR NAME="title">
+  (<TMPL_VAR NAME="min">:<TMPL_VAR NAME="sec">)
+          </td>
+          <td bgcolor="#000080"><TMPL_VAR NAME="times"> time(s)</td>
+        </tr>
+        </TMPL_LOOP>
+     </table> 
+   </td>
+ </tr>
+</table>
+
+<TMPL_INCLUDE NAME="footer.tmpl">

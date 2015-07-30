@@ -1,0 +1,32 @@
+<TMPL_INCLUDE NAME="header.tmpl">
+<center>
+  <b>Top 10 Requested Songs</b>
+  <br/><br/>
+  <font color="#00FF00">This list represents the top 10 songs that were requested in the last 1,000 requests.</font>
+  <br/>
+  <table border="0" bgcolor="#000000" cellpadding="5">
+    <tr>
+      <td bgcolor="#0000F5"><b>Rank:</b></td>
+      <td bgcolor="#0000F5"><b>Name:</b></td>
+      <td bgcolor="#0000F5"><b>Requested</b></td>
+    </tr>
+<TMPL_UNLESS NAME="top10">
+    <tr>
+      <td bgcolor="#000080" align="center"><b>0</b></td>
+      <td bgcolor="#000080">Empty!</td>
+      <td bgcolor="#000080">0</td>
+    </tr>
+<TMPL_ELSE>
+<TMPL_LOOP NAME="top10">
+  <tr>
+    <td bgcolor="#000080" align="center"><b><TMPL_VAR NAME="rank"></b></td>
+    <td bgcolor="#000080"><TMPL_VAR NAME="artist"><font color="#00ff00"><b>:</b></font><TMPL_VAR NAME="title"></td>
+    <td bgcolor="#000080"><TMPL_VAR NAME="times"> time(s)</td>
+  </tr>
+</TMPL_LOOP>
+</TMPL_UNLESS>
+</table>
+</center>
+<a href="/">Back</a>
+
+<TMPL_INCLUDE NAME="footer.tmpl">

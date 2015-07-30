@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Gavin's Personal Icecast Station</title>
+  <style type='text/css'>
+div#copyright, div#footer { font-family: "Courier New", Courier, monospace; text-align: center; font-size: 0.75em; margin: 0; padding: 0.5em;} 
+  </style>
+</head>
+<body bgcolor="#000000" text="#FFFFFF">
+<center>
+<!-- <a href="http://halkeye.net:8000/testmount.m3u">Listen</a><br /> -->
+<a href="/top10" target="_top">Top 10</a><br />
+<a href="/playing" target="_top">Current Information</a><br />
+</center>
+<center>
+<TMPL_LOOP NAME="letters">[<a href="/<TMPL_VAR NAME="letter">.html"><TMPL_VAR NAME="name"></a>]</TMPL_LOOP>
+</center>
+<br />
+<TMPL_IF NAME="errors">
+    <center>
+    <div style='width:50%; color: #FFFFFF; background-color: #0000FF; font-weight:bold; '>Errors:</div>
+    <ul>
+    <TMPL_LOOP NAME="errors">
+      <li><pre style='display: inline;'><TMPL_VAR NAME="error"></pre></li>
+    </TMPL_LOOP>
+    </ul>
+    </center><br /><br />
+</TMPL_IF>
+
+<div class="content">

@@ -1,0 +1,10 @@
+0.1 - Release NOW()
+0.2 - 
+@ adjust songs table to have artist, title, and album and dirless filename
+@ /admin -> update ^^^^ settings
+@ /search -> Search through playlist by song and such
+0.3 - 
+@ add delete users
+@ user properties
+@ logging in
+@ Deplaying requests
